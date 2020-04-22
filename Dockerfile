@@ -51,7 +51,7 @@ RUN \
     && chmod +x /usr/local/bin/slack
 
 RUN \
-    composer create-project magento/magento-coding-standard --stability=dev magento-coding-standard \
+    composer create-project magento/magento-coding-standard --stability=dev ~/magento-coding-standard \
     && ln -s ~/magento-coding-standard/vendor/bin/phpcs /usr/local/bin/phpcs \
     && ln -s ~/magento-coding-standard/vendor/bin/phpcbf /usr/local/bin/phpcbf \
     && composer global require phpmd/phpmd \
