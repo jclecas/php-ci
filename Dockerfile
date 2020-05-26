@@ -69,14 +69,14 @@ RUN \
     && chmod +x /usr/local/bin/pdepend
 
 RUN \
-    curl -sL https://deb.nodesource.com/setup_10.x | bash \
+    curl -sL https://deb.nodesource.com/setup_12.x | bash \
     && apt-get install -y nodejs \
     && apt-get clean autoclean autoremove -y \
     && rm -rf /var/lib/apt/lists/*
 
 RUN \
     mkdir -p ~/eslint/standard ~/eslint/semistandard \
-    && npm install -g bower csslint eslint gulp grunt jshint jslint semistandard standard stylelint \
+    && npm install -g csslint eslint gulp grunt jshint jslint semistandard standard stylelint \
     && npm install -g eslint-plugin-import eslint-plugin-node eslint-plugin-promise eslint-plugin-standard \
     && npm install -g eslint-config-standard eslint-config-semistandard \
     && npm install -g stylelint-config-standard \
