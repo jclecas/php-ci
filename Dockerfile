@@ -18,7 +18,7 @@ RUN \
     && echo "phar.readonly=Off" >> /usr/local/etc/php/conf.d/php.ini
 
 RUN \
-    pecl install redis xdebug \
+    printf "\n" | pecl install redis xdebug \
     && docker-php-ext-enable redis xdebug \
     && docker-php-ext-install bcmath gd gettext intl pdo_mysql soap sockets xsl zip
 
