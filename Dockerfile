@@ -5,8 +5,6 @@ LABEL maintainer="JC Lecas <jeanchristophelecas@gmail.com>"
 ARG DEBIAN_FRONTEND=noninteractive
 
 ENV COMPOSER_ALLOW_SUPERUSER 1
-ENV MAGENTO2_PUB 22be450c2b9cb8173b477f6ef1794e99
-ENV MAGENTO2_PRI 377f8a2a154ceaec8cb28fbfdb165d34
 
 RUN \
     apt-get update \
