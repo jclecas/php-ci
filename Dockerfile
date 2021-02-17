@@ -20,7 +20,7 @@ RUN \
 RUN \
     printf "\n" | pecl install redis xdebug \
     && docker-php-ext-enable redis xdebug \
-    && docker-php-ext-install bcmath gd gettext intl pdo_mysql soap sockets xsl zip
+    && docker-php-ext-install bcmath gd gettext intl pcntl pdo_mysql soap sockets xsl zip
 
 RUN \
     mkdir -p ~/.ssh \
@@ -36,9 +36,10 @@ RUN \
     && apt-get clean autoclean autoremove -y \
     && rm -rf /var/lib/apt/lists/*
 
+COPY --from=composer:1 /usr/bin/local/composer /usr/bin/local/composer
+
 RUN \
-    curl -sL -o /usr/local/bin/composer https://getcomposer.org/composer.phar \
-    && chmod +x /usr/local/bin/composer
+    chmod +x /usr/local/bin/composer
 
 RUN \
     curl -sL -o /usr/local/bin/jsawk http://github.com/micha/jsawk/raw/master/jsawk \
