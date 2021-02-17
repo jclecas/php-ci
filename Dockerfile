@@ -19,7 +19,7 @@ RUN \
 
 RUN \
     printf "\n" | pecl install redis \
-    && printf "\n" | pecl -f xdebug-2.9.8 \
+    && printf "\n" | pecl install -f xdebug-2.9.8 \
     && docker-php-ext-enable redis xdebug \
     && docker-php-ext-install bcmath gd gettext intl pcntl pdo_mysql soap sockets xsl zip
 
