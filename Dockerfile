@@ -36,10 +36,10 @@ RUN \
     && apt-get clean autoclean autoremove -y \
     && rm -rf /var/lib/apt/lists/*
 
-COPY --from=composer:1 /usr/bin/local/composer /usr/bin/local/composer
+COPY --from=composer:1 /usr/bin/composer /usr/bin/composer
 
 RUN \
-    chmod +x /usr/local/bin/composer
+    chmod +x /usr/bin/composer
 
 RUN \
     curl -sL -o /usr/local/bin/jsawk http://github.com/micha/jsawk/raw/master/jsawk \
